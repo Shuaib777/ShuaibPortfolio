@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
 import HeroBanner from "./components/heroBanner/HeroBanner";
-import Practice from "./Practice";
 
 const App = () => {
   return (
