@@ -1,0 +1,98 @@
+@import "../../../mixins.scss";
+
+.heroSection {
+  height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0c061d, #231253);
+
+  .imageContainer {
+    position: absolute;
+    right: -60px;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    @include sm {
+      right: -10px;
+      top: 30px;
+      width: 50%;
+      height: 80%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content {
+    max-width: 700px;
+    margin: 0 200px;
+    display: flex;
+    align-items: center;
+    // justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 30px;
+
+    @include sm {
+      margin: 0 120px;
+      max-width: 150px;
+    }
+
+    .name {
+      font-size: 50px;
+      width: 100%;
+      text-align: start;
+      color: #9400ff;
+      font-weight: bold;
+
+      @include sm {
+        font-size: 25px;
+      }
+    }
+
+    .proffession {
+      font-size: 80px;
+      color: #e5cff7;
+
+      @include sm {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      button {
+        border: none;
+        outline: none;
+        background-color: #e5cff7;
+        color: #0c061d;
+        padding: 10px 20px;
+        border-radius: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 600;
+
+        @include sm {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .scrollButton {
+      width: 100%;
+      margin-top: 20px;
+      cursor: pointer;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

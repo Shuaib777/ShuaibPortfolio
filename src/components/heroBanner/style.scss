@@ -1,0 +1,33 @@
+@import "../../mixins.scss";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 200px;
+  height: 100px;
+
+  @include sm {
+    margin-left: 120px;
+    margin-right: 30px;
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #9400ff;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+}
