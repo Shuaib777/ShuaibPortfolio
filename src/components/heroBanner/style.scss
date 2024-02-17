@@ -16,18 +16,20 @@
   .name {
     font-size: 20px;
     font-weight: 700;
-    color: #9400ff;
+    color: #fff;
   }
 
   .icons {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 
-    img {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
+    @include sm {
+      gap: 20px;
+    }
+
+    svg {
+      font-size: 30px;
     }
   }
 }

@@ -1,9 +1,9 @@
 @import "../../../mixins.scss";
 
 .sidebar {
-  color: #0c061d;
+  color: #003329;
   position: relative;
-  z-index: 1;
+  z-index: 100;
 
   .bg {
     position: fixed;
@@ -20,12 +20,13 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
 
       a {
         width: 100%;
         text-align: center;
         font-size: 30px;
+        font-weight: 600;
       }
     }
   }
@@ -46,6 +47,7 @@
     svg {
       height: 30px;
       width: 30px;
+      fill: #003329;
 
       @include sm {
         height: 20px;

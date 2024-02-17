@@ -1,25 +1,54 @@
 import React from "react";
 import "./style.scss";
-import HeroImage from "../../../assets/hero.png";
 import scroll from "../../../assets/scroll.png";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const heroVariant = {
+    initial: {
+      opacaity: 0,
+      scale: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
   return (
     <div className="heroSection">
-      <div className="imageContainer">
+      {/* <div className="imageContainer">
         <img src={HeroImage} />
-      </div>
-      <div className="content">
+      </div> */}
+      <motion.div
+        className="content"
+        variants={heroVariant}
+        initial="initial"
+        animate="animate"
+      >
         <div className="name">Shuaib</div>
         <div className="proffession">FullStack Developer</div>
         <div className="buttons">
-          <a href="#Services">
+          <a href="#Projects">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Services
+              Projects
+            </motion.button>
+          </a>
+          <a href="#Contact">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="contactButton"
+            >
+              Contact
             </motion.button>
           </a>
         </div>
@@ -31,9 +60,11 @@ const HeroSection = () => {
             duration: 2,
           }}
         >
-          <img src={scroll} />
+          <a href="#Contact">
+            <img src={scroll} />
+          </a>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

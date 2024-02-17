@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Links = ({ setShowSidebar }) => {
-  const links = ["Home", "Services", "Portofolio", "Contact"];
+  const links = ["Home", "Projects", "Contact"];
 
   const variants = {
     open: {

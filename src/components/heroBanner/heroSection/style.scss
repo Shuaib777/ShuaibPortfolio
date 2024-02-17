@@ -4,83 +4,100 @@
   height: calc(100vh - 100px);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #0c061d, #231253);
 
-  .imageContainer {
-    position: absolute;
-    right: -60px;
-    top: 0;
-    width: 50%;
-    height: 100%;
+  // .imageContainer {
+  //   position: absolute;
+  //   right: -60px;
+  //   top: 0;
+  //   width: 50%;
+  //   height: 100%;
 
-    @include sm {
-      right: -10px;
-      top: 30px;
-      width: 50%;
-      height: 80%;
-    }
+  //   @include sm {
+  //     right: -10px;
+  //     top: 30px;
+  //     width: 50%;
+  //     height: 80%;
+  //   }
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  // }
 
   .content {
-    max-width: 700px;
-    margin: 0 200px;
+    width: 100%;
+    padding: 100px 200px;
     display: flex;
     align-items: center;
-    // justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
-    margin-top: 100px;
-    gap: 30px;
+    gap: 50px;
+    text-align: center;
 
     @include sm {
-      margin: 0 120px;
-      max-width: 150px;
+      padding: 50px 50px;
+      gap: 30px;
     }
 
     .name {
-      font-size: 50px;
+      font-size: 70px;
       width: 100%;
-      text-align: start;
-      color: #9400ff;
+      color: #fff;
       font-weight: bold;
+      text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.6);
 
       @include sm {
-        font-size: 25px;
+        font-size: 40px;
       }
     }
 
     .proffession {
       font-size: 80px;
-      color: #e5cff7;
+      color: #fff;
+      line-height: 40px;
+      opacity: 0.8;
+      text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.8);
 
       @include sm {
-        font-size: 30px;
-        line-height: 40px;
+        font-size: 50px;
+        line-height: 60px;
       }
     }
 
     .buttons {
       width: 100%;
       display: flex;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
       button {
         border: none;
         outline: none;
-        background-color: #e5cff7;
-        color: #0c061d;
+        background-color: #fff;
+        color: #359381;
         padding: 10px 20px;
         border-radius: 40px;
         font-size: 20px;
         cursor: pointer;
         font-weight: 600;
+        transition: all ease 0.3s;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 
         @include sm {
           font-size: 15px;
         }
+
+        &:hover {
+          box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.6);
+          scale: 1.1;
+        }
+      }
+
+      .contactButton {
+        color: #fff;
+        background-color: #003329;
       }
     }
 

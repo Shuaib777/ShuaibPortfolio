@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import facebook from "../../assets/facebook.png";
-import instagram from "../../assets/instagram.png";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import Sidebar from "./sidebar/Sidebar";
 import HeroSection from "./heroSection/HeroSection";
 
@@ -12,8 +12,12 @@ const HeroBanner = () => {
       <div className="navbar">
         <div className="name">Shuaib</div>
         <div className="icons">
-          <img src={facebook} />
-          <img src={instagram} />
+          <a href="https://github.com/Shuaib777">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/shuaib-ahmed-shaikh-7b2aa5251/">
+            <FaLinkedin />
+          </a>
         </div>
       </div>
       <HeroSection />
