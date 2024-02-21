@@ -38,9 +38,10 @@
       gap: 30px;
 
       .item {
-        width: 250px;
+        width: 280px;
         padding: 10px 0;
-        font-size: 20px;
+        font-size: 18px;
+        border-radius: 5px;
         border: 1px white solid;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
         display: flex;
@@ -52,6 +53,11 @@
 
         a {
           color: #003329;
+          transition: all ease 0.3s;
+
+          &:hover {
+            color: white;
+          }
         }
 
         .modeImage {
@@ -90,6 +96,10 @@
         border-radius: 5px;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
         transition: all ease 0.3s;
+
+        @include sm {
+          width: 85%;
+        }
 
         &::placeholder {
           color: white;

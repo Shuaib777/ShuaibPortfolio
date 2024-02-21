@@ -26,15 +26,6 @@ const Sidebar = () => {
     },
   };
 
-  const buttonVariants = {
-    open: {
-      // transform: rotate(),
-    },
-    closed: {
-      transform: "rotate(45 50 50)",
-    },
-  };
-
   return (
     <motion.div className="sidebar" animate={showSidebar ? "open" : "closed"}>
       <motion.div className="bg" variants={backgroundVariants}>

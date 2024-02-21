@@ -2,10 +2,12 @@ import React, { useRef } from "react";
 import "./style.scss";
 import { motion } from "framer-motion";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaFacebookMessenger } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contacts = () => {
+  const formRef = useRef();
+
   const headingVariant = {
     initial: {
       y: 100,
@@ -56,6 +58,16 @@ const Contacts = () => {
     },
   };
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm("service_hvbpx8b", "template_4xq4v06", formRef.current, {
+      publicKey: "URNdbDJ4HEKhdkSZg",
+    });
+
+    e.target.reset();
+  };
+
   return (
     <div className="contacts">
       <motion.div
@@ -75,32 +87,43 @@ const Contacts = () => {
           whileInView="whileInView"
           animate="initial"
           variants={itemsVariant}
-          // viewport={{ root: ref }}
         >
           <motion.div className="item" variants={itemVariant}>
             <div className="modeImage">
               <MdOutlineEmail />
             </div>
             <div className="modeName">Email</div>
-            <div className="modeURL">support@gmail.com</div>
-            <a href="#">Send a Message</a>
+            <div className="modeURL">shuaibshaikh179@gmail.com</div>
+            <a href="mailto:shuaibshaikh179@gmail.com" target="_blank">
+              Send a Message
+            </a>
           </motion.div>
           <motion.div className="item" variants={itemVariant}>
             <div className="modeImage">
-              <FaFacebookMessenger />
+              <FaLinkedin />
             </div>
-            <div className="modeName">Messenger</div>
+            <div className="modeName">LinkedIn</div>
             <div className="modeURL">Shuaib</div>
-            <a href="#">Send a Message</a>
+            <a
+              href="https://www.linkedin.com/in/shuaib-ahmed-shaikh-7b2aa5251/"
+              target="_blank"
+            >
+              Send a Message
+            </a>
           </motion.div>
-          <motion.div className="item" variants={itemVariant}>
+          {/* <motion.div className="item" variants={itemVariant}>
             <div className="modeImage">
               <FaWhatsapp />
             </div>
             <div className="modeName">Whatsapp</div>
             <div className="modeURL">+91 123245</div>
-            <a href="#">Send a Message</a>
-          </motion.div>
+            <a
+              href="https://api.whatsapp.com/send?phone=+912334565432&text=Hi"
+              target="_blank"
+            >
+              Send a Message
+            </a>
+          </motion.div> */}
         </motion.div>
         <motion.div
           className="formSection"
@@ -108,10 +131,29 @@ const Contacts = () => {
           whileInView="whileInView"
           animate="initial"
         >
-          <motion.form variants={formVariant}>
-            <input type="text" className="name" placeholder="Your Name" />
-            <input type="text" className="email" placeholder="Your Email" />
-            <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
+          <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
+            variants={formVariant}
+          >
+            <input
+              type="text"
+              name="name"
+              className="name"
+              placeholder="Your Name"
+            />
+            <input
+              type="text"
+              name="email"
+              className="email"
+              placeholder="Your Email"
+            />
+            <textarea
+              cols="30"
+              name="message"
+              rows="10"
+              placeholder="Your Message"
+            ></textarea>
             <button>Send Message</button>
           </motion.form>
         </motion.div>
